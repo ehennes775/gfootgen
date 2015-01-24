@@ -51,21 +51,36 @@ OK.
 mm. Errors encountered while parsing a measurement prevent updating the
 footprint. Common parameters for footprints include the following:
 
-|Parameter|Description|
-|-|-|
-|Package Length|The dimension of the package on the x axis. Used to calculate the silkscreen border.|
-|Package Width|The dimension of the package on the y axis. Used to calculate the silkscreen border.|
-|Pad Length|The dimension of the copper pad on the x axis.|
-|Pad Width|The dimension of the copper pad on the y axis.|
-|Pad Spacing (BSC)|The dimension between pads on opposite sides of the device, from center to center. Negative values flip the pads of the device horizontally.|
-|Pad Pitch (BSC)|The dimension between pads in the same row, from center to center. Negative values flip the pads of the device vertically.|
-|Pin Count|The total number of pins/pads on the device.|
-|Pad Clearance|The minimum distance from the copper pad to surrounding copper.|
-|Pad Soldermask Relief|The minimum distance from the copper pad to the soldermask opening.|
-|Silkscreen Package Offset|The additional distance from the edge of the package to the centerline of the silkscreen.|
-|Silkscreen Pad Offset|The additional distance from the edge of the pad copper to the centerline of the silkscreen.|
-|Silkscreen Thickness|The silkscreen line thickness.|
-|Silkscreen Outline|Selects the type of outline for the footprint (e.g. polarized, non-polarized).|
+ * __Package Length.__ The dimension of the package on the x axis. The
+   footprint generator uses this value to calculate the silkscreen border.
+ * __Package Width.__ The dimension of the package on the y axis. The footprint
+   generator uses this value to calculate the silkscreen border.
+ * __Pad Length.__ The dimension of the copper pad on the x axis.
+ * __Pad Width.__ The dimension of the copper pad on the y axis.
+ * __Copper Diameter.__ The diameter of the copper pad for through hole pins.
+ * __Drill Diameter.__ The the diameter of the hole for through hole pins.
+ * __Pad Clearance.__ The minimum distance from the copper pad to adjacent
+   copper.
+ * __Pad Soldermask Relief.__ The minimum distance from the copper pad to the
+   soldermask opening.
+ * __Pad Spacing (BSC).__ The dimension between rows of pads on opposite sides
+   of the device, from center to center. Negative values exchange positions of
+   the rows.
+ * __Pad Pitch (BSC).__ The dimension between pads in the same row, from center
+   to center. Negative values reverse the order of pads in the row.
+ * __Pin Count.__ The total number of pins/pads on the device.
+ * __Silkscreen Package Offset.__ The additional distance from the edge of the
+   package to the inner edge of the silkscreen. To place the silkscreen
+   centerline at the edge of the package, use the silkscreen line thickness
+   divided by -2.0.
+ * __Silkscreen Pad Offset.__ The additional distance from the edge of the
+   copper pad to the inner edge of the silkscreen.
+ * __Silkscreen Thickness.__ The silkscreen line thickness.
+ * __Silkscreen Outline.__ Selects the type of outline for the footprint (e.g.
+   polarized, non-polarized).
+ * __Label Offset.__ The dimension between the centerline of the silkscreen
+   border to the insertion point of the label text.
+
 
 3. __Check the footprint.__ The footprint generator provides both a text and
 graphic preview in the right panel. These previews allow the user a preliminary
@@ -73,3 +88,6 @@ check for correctness.
 
 4. __Export the footprint to a file.__ Press the Export button and save the
 footprint to a file.
+
+5. __Verify the footprint.__ With the PCB design completed, print the layout at
+1:1 on paper. Place the components on their footprints and ensure correct fit.
