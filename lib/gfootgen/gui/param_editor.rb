@@ -35,15 +35,15 @@ module Gui
 
             @builder = nil
 
-            @buffers = Hash[params.map { |attr, text, type|
+            @buffers = Hash[params.map { |attr, text, hint, type|
                 [attr, create_string_widget(type)]
                 }]
 
-            @labels = Hash[params.map { |attr, text, type|
-                [attr, create_label(text)]
+            @labels = Hash[params.map { |attr, text, hint, type|
+                [attr, create_label(text, hint)]
                 }]
 
-            widgets = params.map do |attr, text, type|
+            widgets = params.map do |attr, text, hint, type|
                 [@labels[attr], @buffers[attr]]
             end
 

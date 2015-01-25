@@ -103,12 +103,14 @@ module Gui
         #
         #
         #
-        def create_label text
+        def create_label text, hint = nil
 
             label = Gtk::Label.new(text)
 
             label.set_alignment 0.0, 0.5
             label.margin_left = LABEL_INDENT
+
+            label.tooltip_text = hint unless hint.nil?
 
             return label
         end

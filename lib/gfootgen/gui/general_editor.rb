@@ -26,9 +26,24 @@ module Gui
         type_register
 
         PARAMS = [
-            [:name,        "Refdes",      String ],
-            [:description, "Description", String ],
-            [:value,       "Value",       String ]
+            [
+                :name,
+                "Refdes",
+                nil,
+                String
+                ],
+            [
+                :description,
+                "Description",
+                nil,
+                String
+                ],
+            [
+                :value,
+                "Value",
+                nil,
+                String
+                ]
             ]
 
         def initialize builder = nil

@@ -26,12 +26,38 @@ module Gui
         type_register
 
         PARAMS = [
-            [:silkscreen_package_offset, "Silkscreen Package Offset", Pcb::Coord   ],
-            [:silkscreen_pad_offset,     "Silkscreen Pad Offset",     Pcb::Coord   ],
-            [:silkscreen_thickness,      "Silkscreen Thickness",      Pcb::Coord   ],
-            [:silkscreen_outline,        "Silkscreen Outline",        Tool::Outline],
-            [:label_offset,              "Label Offset",              Pcb::Coord   ]
+            [
+                :silkscreen_package_offset,
+                "Silkscreen Package Offset",
+                "The additional distance from the edge of the package to the inner edge of the silkscreen.",
+                Pcb::Coord
+                ],
+            [
+                :silkscreen_pad_offset,
+                "Silkscreen Pad Offset",
+                "The additional distance from the edge of the copper pad to the inner edge of the silkscreen.",
+                Pcb::Coord
+                ],
+            [
+                :silkscreen_thickness,
+                "Silkscreen Thickness",
+                "The silkscreen line thickness.",
+                Pcb::Coord
+                ],
+            [
+                :silkscreen_outline,
+                "Silkscreen Outline",
+                nil,
+                Tool::Outline
+                ],
+            [
+                :label_offset,
+                "Label Offset",
+                "The dimension between the centerline of the silkscreen border to the insertion point of the label text.",
+                Pcb::Coord
+                ]
             ]
+
 
         def initialize builder = nil
 

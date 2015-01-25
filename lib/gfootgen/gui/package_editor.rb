@@ -26,8 +26,18 @@ module Gui
         type_register
 
         PARAMS = [
-            [:package_length, "Package Length", Pcb::Coord],
-            [:package_width,  "Package Width",  Pcb::Coord]
+            [
+                :package_length,
+                "Package Length",
+                "The dimension of the package on the x axis",
+                Pcb::Coord
+                ],
+            [
+                :package_width,
+                "Package Width",
+                "The dimension of the package on the y axis",
+                Pcb::Coord
+                ]
             ]
 
         def initialize builder = nil

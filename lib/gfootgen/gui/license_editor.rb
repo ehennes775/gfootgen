@@ -26,11 +26,32 @@ module Gui
         type_register
 
         PARAMS = [
-            [:author,       "Author",               String ],
-            [:copyright,    "Copyright",            String ],
-            [:dist_license, "Distribution License", String ],
-            [:use_license,  "Use License",          String ]
+            [
+                :author,
+                "Author",
+                nil,
+                String
+                ],
+            [
+                :copyright,
+                "Copyright",
+                nil,
+                String
+                ],
+            [
+                :dist_license,
+                "Distribution License",
+                nil,
+                String
+                ],
+            [
+                :use_license,
+                "Use License",
+                nil,
+                String
+                ]
             ]
+
 
         def initialize builder = nil
 

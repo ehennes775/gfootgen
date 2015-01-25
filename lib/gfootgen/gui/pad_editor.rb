@@ -26,24 +26,62 @@ module Gui
         type_register
 
         PARAMS = [
-            [:copper_diameter,        "Copper Diameter",               Pcb::Coord],
-            [:drill_diameter,         "Drill Diameter",                Pcb::Coord],
-            [:pad_length,             "Pad Length",                    Pcb::Coord],
-            [:pad_width,              "Pad Width",                     Pcb::Coord],
-            [:tab_length,             "Tab Length",                    Pcb::Coord],
-            [:tab_width,              "Tab Width",                     Pcb::Coord],
-            [:pad_spacing,            "Pad Spacing (BSC)",             Pcb::Coord],
-            [:horizontal_pad_spacing, "Pad Spacing (BSC), Horizontal", Pcb::Coord],
-            [:vertical_pad_spacing,   "Pad Spacing (BSC), Vertical",   Pcb::Coord],
-            [:pad_pitch,              "Pad Pitch (BSC)",               Pcb::Coord],
-            [:horizontal_pad_pitch,   "Pad Pitch (BSC), Horizontal",   Pcb::Coord],
-            [:vertical_pad_pitch,     "Pad Pitch (BSC), Vertical",     Pcb::Coord],
-            [:pin_count,              "Pin Count",                     Integer   ],
-            [:left_right_pins,        "Left and Right Pin Count",      Integer   ],
-            [:top_bottom_pins,        "Top and Bottom Pin Count",      Integer   ],
-            [:clearance,              "Clearance",                     Pcb::Coord],
-            [:soldermask_relief,      "Soldermask Relief",             Pcb::Coord]
+            [
+                :pad_spacing,
+                "Pad Spacing (BSC)",
+                "The dimension between pads on opposite rows, center-to-center",
+                Pcb::Coord
+                ],
+            [
+                :horizontal_pad_spacing,
+                "Pad Spacing (BSC), Horizontal",
+                "The dimension between pads in left and right rows, center-to-center",
+                Pcb::Coord
+                ],
+            [
+                :vertical_pad_spacing,
+                "Pad Spacing (BSC), Vertical",
+                "The dimension between pads in top and bottom rows, center-to-center",
+                Pcb::Coord
+                ],
+            [
+                :pad_pitch,
+                "Pad Pitch (BSC)",
+                "The dimension between pads in the same row, center-to-center",
+                Pcb::Coord
+                ],
+            [
+                :horizontal_pad_pitch,
+                "Pad Pitch (BSC), Horizontal",
+                "The dimension between pads in the same left or right row, center-to-center",
+                Pcb::Coord
+                ],
+            [
+                :vertical_pad_pitch,
+                "Pad Pitch (BSC), Vertical",
+                "The dimension between pads in the same top or bottom row, center-to-center",
+                Pcb::Coord
+                ],
+            [
+                :pin_count,
+                "Pin Count",
+                "The total number of pads/pins on the footprint",
+                Integer
+                ],
+            [
+                :left_right_pins,
+                "Left and Right Pin Count",
+                "The number of pins on the left or right side of the footprint",
+                Integer
+                ],
+            [
+                :top_bottom_pins,
+                "Top and Bottom Pin Count",
+                "The number of pins on the top or bottom of the footprint",
+                Integer
+                ]
             ]
+
 
         def initialize builder = nil
 

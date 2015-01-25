@@ -26,15 +26,56 @@ module Gui
         type_register
 
         PARAMS = [
-            [:pad_length, "Pad Length",  Pcb::Coord ],
-            [:pad_width, "Pad Width",  Pcb::Coord ],
-            [:tab_length, "Tab Length",  Pcb::Coord ],
-            [:tab_width, "Tab Width",  Pcb::Coord ],
-            [:copper_diameter, "Copper Diameter",  Pcb::Coord ],
-            [:drill_diameter, "Drill Diameter",  Pcb::Coord ],
-            [:clearance, "Clearance",  Pcb::Coord ],
-            [:soldermask_relief, "Soldermask Relief",  Pcb::Coord ]
+            [
+                :pad_length,
+                "Pad Length",
+                "The dimension of the pads on the x axis",
+                Pcb::Coord
+                ],
+            [
+                :pad_width,
+                "Pad Width",
+                "The dimension of the pads on the y axis",
+                Pcb::Coord
+                ],
+            [
+                :tab_length,
+                "Tab Length",
+                "The dimension of the tab on the x axis",
+                Pcb::Coord
+                ],
+            [
+                :tab_width,
+                "Tab Width",
+                "The dimension of the tab on the y axis",
+                Pcb::Coord
+                ],
+            [
+                :copper_diameter,
+                "Copper Diameter",
+                "The diameter of the copper pad on through-hole pins",
+                Pcb::Coord
+                ],
+            [
+                :drill_diameter,
+                "Drill Diameter",
+                "The diameter of the drill on through-hole pins",
+                Pcb::Coord
+                ],
+            [
+                :clearance,
+                "Clearance",
+                "The minimum dimension from copper pad to adjacent copper",
+                Pcb::Coord
+                ],
+            [
+                :soldermask_relief,
+                "Soldermask Relief",
+                "The dimension from copper pad to soldermask opening",
+                Pcb::Coord
+                ]
             ]
+
 
         def initialize title = "Pad/Pin Parameters"
 
