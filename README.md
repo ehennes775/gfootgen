@@ -9,7 +9,7 @@ your distro package manager.
   * ruby-atk
   * ruby-cairo
   * ruby-gdk3
-  * ruby-gdk-pixbuf
+  * ruby-gdk-pixbuf2
   * ruby-gio2
   * ruby-glib2
   * ruby-gtk3
