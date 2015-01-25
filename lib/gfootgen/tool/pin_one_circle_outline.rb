@@ -31,7 +31,7 @@ module Tool
         def calculate_center_y element, box, thickness
 
             element.objects.each do |object|
-                if object.kind_of? Pcb::Pad and object.number == "1" then
+                if object.kind_of? Pcb::Terminal and object.number == "1" then
                     return object.center_y
                 end
             end
