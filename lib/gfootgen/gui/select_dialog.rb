@@ -54,6 +54,11 @@ module Gui
                 "Quad",
                 "Quad SMT footprints",
                 Tool::QuadSmtFootprintBuilder.new
+                ],
+            [
+                "SIP",
+                "Single-in-line through-hole footprints",
+                Tool::SilThtFootprintBuilder.new
                 ]
             ]
 
