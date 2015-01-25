@@ -109,10 +109,10 @@ module Pcb
 
 
         #
-        # compare two coordinates - doesn't take units into account yet
+        # compare two coordinates
         #
         def <=> other
-            value <=> other.value
+            value <=> other.convert(@units).value
         end
 
 
