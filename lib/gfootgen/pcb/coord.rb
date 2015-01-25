@@ -41,6 +41,12 @@ module Pcb
 
 
         #
+        # the string for specifying inch units
+        #
+        UNITS_IN = "in"
+
+
+        #
         # the string for specifying mil units
         #
         UNITS_MIL = "mil"
@@ -64,9 +70,14 @@ module Pcb
         # a table for converting from one units to another
         #
         CONVERSION_TABLE = {
+            create_key(UNITS_IN,  UNITS_IN ) => 1.0,
             create_key(UNITS_MIL, UNITS_MIL) => 1.0,
             create_key(UNITS_MM,  UNITS_MM ) => 1.0,
+            create_key(UNITS_IN,  UNITS_MIL) => 1000.0,
+            create_key(UNITS_IN,  UNITS_MM)  => 25.4,
+            create_key(UNITS_MM,  UNITS_IN ) => 1.0 / 25.4,
             create_key(UNITS_MM,  UNITS_MIL) => 1.0 / 0.0254,
+            create_key(UNITS_MIL, UNITS_IN)  => 1.0 / 1000.0,
             create_key(UNITS_MIL, UNITS_MM)  => 0.0254
             }
 
@@ -102,6 +113,8 @@ module Pcb
                 Coord.new string.to_f, UNITS_MM
             elsif string =~ /mil$/ then
                 Coord.new string.to_f, UNITS_MIL
+            elsif string =~ /in$/ then
+                Coord.new string.to_f, UNITS_IN
             else
                 raise ParseError
             end
