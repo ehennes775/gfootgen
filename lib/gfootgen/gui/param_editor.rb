@@ -90,7 +90,11 @@ module Gui
 
             @buffers.each do |key, widget|
                 if @builder.respond_to? "#{key}=" then
-                    @builder.send "#{key}=", widget.value
+                    begin
+                        @builder.send "#{key}=", widget.value
+                    rescue Pcb::Coord::ParseError
+                        # todo: provide some error indication
+                    end
                 end
             end
 
