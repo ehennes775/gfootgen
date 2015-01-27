@@ -167,8 +167,12 @@ module Pcb
         # convert this coordinate to a coordinate with the given units
         #
         def convert target
-            factor = CONVERSION_TABLE[Coord.create_key @units, target]
-            Coord.new @value * factor, target
+            if @units == target
+                self
+            else
+                factor = CONVERSION_TABLE[Coord.create_key @units, target]
+                Coord.new @value * factor, target
+            end
         end
 
 
