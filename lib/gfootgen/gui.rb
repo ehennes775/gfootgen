@@ -418,14 +418,12 @@ module Gui
 
             if @export_dialog.run == Gtk::ResponseType::ACCEPT then
 
-                file = Gio::File.new_for_uri @export_dialog.uri
-
-                file.replace do |output|
+                File.open(@export_dialog.filename, "w") do |output|
                     output.write contents
                 end
             end
 
-            rescue Gio::IO::Error => error
+            rescue StandardError => error
                 show_exception "File Error", error
 
             ensure
