@@ -17,4 +17,6 @@ Gem::Specification.new do |spec|
   spec.executables   = ["gfootgen"]
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+
+  #spec.add_runtime_dependency 'gtk3'
 end

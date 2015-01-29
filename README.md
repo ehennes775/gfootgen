@@ -2,32 +2,51 @@
 Footprint Generator for PCB
 
 ## Installation
-1. __Install the required packages.__ These packages should be avaialble from
-your distro package manager.
-
-  * ruby
-  * ruby-atk
-  * ruby-cairo
-  * ruby-gdk3
-  * ruby-gdk-pixbuf2
-  * ruby-gio2
-  * ruby-glib2
-  * ruby-gtk3
-  * ruby-pango
-
-2. __Obtain the source code to the footprint generator.__ Change the current
+1. __Obtain the source code to the footprint generator.__ Change the current
 directory to a project folder, and use the following command to obtain source
 from GitHub.
 
  ```sh
 $ git clone https://github.com/ehennes775/gfootgen.git
+$ cd gfootgen
 ```
+
+2. __Install the required packages.__ Packages can either be installed manually
+   or automatically. Follow either step a or step b, below.
+
+  a. __Install the required packages manually.__ These packages should be
+    avaialble from your distro package manager.
+
+    * ruby
+    * ruby-atk
+    * ruby-cairo
+    * ruby-gdk3
+    * ruby-gdk-pixbuf2
+    * ruby-gio2
+    * ruby-glib2
+    * ruby-gtk3
+    * ruby-pango
+
+  b. __Let gem install packages automatically.__ During the installation step,
+     gem can locate, download, build, and install the dependencies
+     automatically. Gem needs the following packages that contain headers for
+     building the native extensions:
+
+    * ruby-1.9.1-dev
+    * ruby-2.0-dev
+
+  Additionally, uncomment the following line inside _gfootgen.gemspec_.
+
+ ```ruby
+  #spec.add_runtime_dependency 'gtk3'
+```
+
 3. __Build the gem.__
 
  ```sh
-$ cd gfootgen
 $ gem build gfootgen.gemspec
 ```
+
 4. __Install the gem.__ Superuser access may be needed for installation.
 
  ```sh
