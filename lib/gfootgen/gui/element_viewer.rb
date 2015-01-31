@@ -252,7 +252,11 @@ module Gui
                     context.line_to @x1.to_f, @y1.to_f
                 end
 
-                context.set_line_cap Cairo::LINE_CAP_SQUARE
+                if @square
+                    context.set_line_cap Cairo::LINE_CAP_SQUARE
+                else
+                    context.set_line_cap Cairo::LINE_CAP_ROUND
+                end
 
                 context.set_line_width (@aperture + @soldermask_relief * 2.0).to_f
                 context.set_source_rgb 0.3, 0.3, 0.3

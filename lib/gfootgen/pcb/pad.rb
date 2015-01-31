@@ -49,7 +49,8 @@ module Pcb
                 :aperture => aperture,
                 :clearance => params[:clearance],
                 :soldermask_relief => params[:soldermask_relief],
-                :number => params[:number]
+                :number => params[:number],
+                :square => params[:square].nil? ? true : params[:square]
                 )
         end
 
@@ -73,6 +74,7 @@ module Pcb
             @x1 = params[:x1] || 0.0
             @y1 = params[:y1] || 0.0
             @aperture = params[:aperture] || 1.0
+            @square = params[:square].nil? ? true : params[:square]
         end
 
 
@@ -131,7 +133,8 @@ module Pcb
                 " #{@aperture + @soldermask_relief * 2.0} "\
                 "\"#{@number}\" "\
                 "\"#{@number}\" "\
-                "\"square\"]"
+                "\"#{@square ? "square" : ""}\""\
+                "]"
         end
 
 

@@ -39,6 +39,12 @@ module Gui
                 Pcb::Coord
                 ],
             [
+                :pad_diameter,
+                "Pad Diameter",
+                "The diamater of the copper pad",
+                Pcb::Coord
+                ],
+            [
                 :tab_length,
                 "Tab Length",
                 "The dimension of the tab on the x axis",

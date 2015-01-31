@@ -51,6 +51,11 @@ module Gui
                 Tool::DpakFootprintBuilder.new
                 ],
             [
+                "Grid",
+                "Grid SMT footprints",
+                Tool::GridSmtFootprintBuilder.new
+                ],
+            [
                 "Quad",
                 "Quad SMT footprints",
                 Tool::QuadSmtFootprintBuilder.new

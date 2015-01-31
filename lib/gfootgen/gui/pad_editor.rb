@@ -69,6 +69,18 @@ module Gui
                 Integer
                 ],
             [
+                :column_count,
+                "Columns",
+                "The number of pads along the x axis",
+                Integer
+                ],
+            [
+                :row_count,
+                "Rows",
+                "The number of pads along the y axis",
+                Integer
+                ],
+            [
                 :left_right_pins,
                 "Left and Right Pin Count",
                 "The number of pins on the left or right side of the footprint",
