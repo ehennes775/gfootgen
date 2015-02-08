@@ -63,8 +63,8 @@ module Tool
         def to_h
 
             {
-                :clearance         => @clearance.to_s(true),
-                :soldermask_relief => @soldermask_relief.to_s(true)
+                :clearance         => @clearance,
+                :soldermask_relief => @soldermask_relief
             }
         end
 

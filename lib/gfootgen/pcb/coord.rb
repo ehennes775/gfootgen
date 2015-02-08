@@ -185,6 +185,15 @@ module Pcb
 
 
         #
+        # convert to a json object
+        #
+        def to_json *a
+
+            to_s(true).to_json *a
+        end
+
+
+        #
         # convert the coordinate to a string
         #
         # if the parameter is true, a space is added for the UI

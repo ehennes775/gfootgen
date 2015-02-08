@@ -92,8 +92,8 @@ module Tool
         def to_h
 
             h = super
-            h[:pad_length] = @pad_length.to_s true
-            h[:pad_width]  = @pad_width.to_s true
+            h[:pad_length] = @pad_length
+            h[:pad_width]  = @pad_width
             h
         end
 

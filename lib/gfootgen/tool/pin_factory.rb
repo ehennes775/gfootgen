@@ -88,8 +88,8 @@ module Tool
         def to_h
 
             h = super
-            h[:copper_diameter] = @copper_diameter.to_s true
-            h[:drill_diameter]  = @drill_diameter.to_s true
+            h[:copper_diameter] = @copper_diameter
+            h[:drill_diameter]  = @drill_diameter
             h
         end
 

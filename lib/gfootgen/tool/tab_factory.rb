@@ -91,8 +91,8 @@ module Tool
         def to_h
 
             h = super
-            h[:tab_length] = @tab_length.to_s true
-            h[:tab_width]  = @tab_width.to_s true
+            h[:tab_length] = @tab_length
+            h[:tab_width]  = @tab_width
             h
         end
 
