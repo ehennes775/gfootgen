@@ -44,6 +44,39 @@ module Tool
             @soldermask_relief = params[:soldermask_relief] || Pcb::Terminal::DEFAULT_SOLDERMASK_RELIEF
         end
 
+
+        #
+        # convert a json object into parameters for initialize
+        #
+        def self.o_to_params o
+
+            {
+                :clearance         => Pcb::Coord.parse(o["clearance"]),
+                :soldermask_relief => Pcb::Coord.parse(o["soldermask_relief"])
+            }
+        end
+
+
+        #
+        # convert to a hash
+        #
+        def to_h
+
+            {
+                :clearance         => @clearance.to_s(true),
+                :soldermask_relief => @soldermask_relief.to_s(true)
+            }
+        end
+
+
+        #
+        # convert to a json object
+        #
+        def to_json *a
+
+            to_h.to_json *a
+        end
+
     end
 
 end

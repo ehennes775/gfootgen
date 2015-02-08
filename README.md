@@ -25,6 +25,7 @@ $ cd gfootgen
     * ruby-gio2
     * ruby-glib2
     * ruby-gtk3
+    * ruby-json
     * ruby-pango
 
   b. __Let gem install packages automatically.__ During the installation step,
@@ -35,10 +36,11 @@ $ cd gfootgen
     * ruby-1.9.1-dev
     * ruby-2.0-dev
 
-  Additionally, uncomment the following line inside _gfootgen.gemspec_.
+  Additionally, uncomment the following lines inside _gfootgen.gemspec_.
 
  ```ruby
   #spec.add_runtime_dependency 'gtk3'
+  #spec.add_runtime_dependency 'json'
 ```
 
 3. __Build the gem.__

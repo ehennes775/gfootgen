@@ -48,6 +48,15 @@ module Tool
 
 
         #
+        # create from a json object
+        #
+        def self.create_json o
+
+            new(o_to_params(o))
+        end
+
+
+        #
         # create a tab
         #
         # [number] the pin number as a string
@@ -62,6 +71,29 @@ module Tool
                 :number => number
                 )
 
+        end
+
+        #
+        # convert a json object into parameters for initialize
+        #
+        def self.o_to_params o
+
+            h = super
+            h[:tab_length] = Pcb::Coord.parse o["tab_length"]
+            h[:tab_width]  = Pcb::Coord.parse o["tab_width"]
+            h
+        end
+
+
+        #
+        # convert to a hash
+        #
+        def to_h
+
+            h = super
+            h[:tab_length] = @tab_length.to_s true
+            h[:tab_width]  = @tab_width.to_s true
+            h
         end
 
     end

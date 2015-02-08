@@ -21,12 +21,12 @@ module Tool
     #
     # creates pads
     #
-    class PadFactory < TerminalFactory
+    class AsymmetricPadFactory < TerminalFactory
 
         #
-        # the dimension of the pad on the x axis
+        # the dimension of the left pad on the x axis
         #
-        attr_accessor :pad_length
+        attr_accessor :left_pad_length
 
 
         #
@@ -36,23 +36,21 @@ module Tool
 
 
         #
+        # the dimension of the right pad on the x axis
+        #
+        attr_accessor :right_pad_length
+
+
+        #
         # initialize a new instance
         #
         def initialize params = {}
 
             super
 
-            @pad_length = params[:pad_length] || Pcb::Coord::parse("2.5 mm")
+            @left_pad_length = params[:pad_length] || Pcb::Coord::parse("2.5 mm")
+            @right_pad_length = params[:pad_length] || Pcb::Coord::parse("2.5 mm")
             @pad_width = params[:pad_width] || Pcb::Coord.parse("1.7 mm")
-        end
-
-
-        #
-        # create from a json object
-        #
-        def self.create_json o
-
-            new(o_to_params(o))
         end
 
 
@@ -61,40 +59,16 @@ module Tool
         #
         # [number] the pin number as a string
         #
-        def create_terminal number
+        def create_terminal number, location
 
             Pcb::Pad.new_lw(
-                :length => @pad_length,
+                :length => location == :right ? @right_pad_length : @left_pad_length,
                 :width => @pad_width,
                 :clearance => @clearance,
                 :soldermask_relief => @soldermask_relief,
                 :number => number
                 )
 
-        end
-
-
-        #
-        # convert a json object into parameters for initialize
-        #
-        def self.o_to_params o
-
-            h = super
-            h[:pad_length] = Pcb::Coord.parse o["pad_length"]
-            h[:pad_width]  = Pcb::Coord.parse o["pad_width"]
-            h
-        end
-
-
-        #
-        # convert to a hash
-        #
-        def to_h
-
-            h = super
-            h[:pad_length] = @pad_length.to_s true
-            h[:pad_width]  = @pad_width.to_s true
-            h
         end
 
     end

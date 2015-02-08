@@ -44,6 +44,15 @@ module Tool
 
 
         #
+        # create from a json object
+        #
+        def self.create_json o
+
+            new(o_to_params(o))
+        end
+
+
+        #
         # create a pin
         #
         # [number] the pin number as a string
@@ -58,6 +67,30 @@ module Tool
                 :number => number
                 )
 
+        end
+
+
+        #
+        # convert a json object into parameters for initialize
+        #
+        def self.o_to_params o
+
+            h = super
+            h[:copper_diameter] = Pcb::Coord.parse o["copper_diameter"]
+            h[:drill_diameter]  = Pcb::Coord.parse o["drill_diameter"]
+            h
+        end
+
+
+        #
+        # convert to a hash
+        #
+        def to_h
+
+            h = super
+            h[:copper_diameter] = @copper_diameter.to_s true
+            h[:drill_diameter]  = @drill_diameter.to_s true
+            h
         end
 
     end

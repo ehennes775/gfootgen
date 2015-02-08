@@ -18,6 +18,7 @@
 # ++
 
 require 'gtk3'
+require 'json'
 
 require_relative 'gfootgen/box'
 require_relative 'gfootgen/pcb'
