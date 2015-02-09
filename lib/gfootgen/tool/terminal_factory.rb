@@ -64,11 +64,9 @@ module Tool
 
             instance_variables.reduce({}) do |hash, name|
 
-                getter = name[1..-1]
+                getter = name[1..-1].to_sym
 
-                if respond_to? getter
-                    hash[getter.to_sym] = send getter
-                end
+                hash[getter] = send getter if respond_to? getter
 
                 hash
             end
