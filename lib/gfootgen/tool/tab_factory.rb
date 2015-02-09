@@ -84,18 +84,6 @@ module Tool
             h
         end
 
-
-        #
-        # convert to a hash
-        #
-        def to_h
-
-            h = super
-            h[:tab_length] = @tab_length
-            h[:tab_width]  = @tab_width
-            h
-        end
-
     end
 
 end

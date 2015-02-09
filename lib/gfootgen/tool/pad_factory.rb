@@ -85,18 +85,6 @@ module Tool
             h
         end
 
-
-        #
-        # convert to a hash
-        #
-        def to_h
-
-            h = super
-            h[:pad_length] = @pad_length
-            h[:pad_width]  = @pad_width
-            h
-        end
-
     end
 
 end

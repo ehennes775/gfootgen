@@ -62,10 +62,16 @@ module Tool
         #
         def to_h
 
-            {
-                :clearance         => @clearance,
-                :soldermask_relief => @soldermask_relief
-            }
+            instance_variables.reduce({}) do |hash, name|
+
+                getter = name[1..-1]
+
+                if respond_to? getter
+                    hash[getter.to_sym] = send getter
+                end
+
+                hash
+            end
         end
 
 

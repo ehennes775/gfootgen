@@ -81,18 +81,6 @@ module Tool
             h
         end
 
-
-        #
-        # convert to a hash
-        #
-        def to_h
-
-            h = super
-            h[:copper_diameter] = @copper_diameter
-            h[:drill_diameter]  = @drill_diameter
-            h
-        end
-
     end
 
 end
