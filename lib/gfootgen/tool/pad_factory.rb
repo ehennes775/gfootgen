@@ -26,13 +26,13 @@ module Tool
         #
         # the dimension of the pad on the x axis
         #
-        attr_accessor :pad_length
+        attr_serializable :pad_length, Pcb::Coord
 
 
         #
         # the dimension of the pad on the y axis
         #
-        attr_accessor :pad_width
+        attr_serializable :pad_width, Pcb::Coord
 
 
         #
@@ -44,15 +44,6 @@ module Tool
 
             @pad_length = params[:pad_length] || Pcb::Coord::parse("2.5 mm")
             @pad_width = params[:pad_width] || Pcb::Coord.parse("1.7 mm")
-        end
-
-
-        #
-        # create from a json object
-        #
-        def self.create_json o
-
-            new(o_to_params(o))
         end
 
 
@@ -71,18 +62,6 @@ module Tool
                 :number => number
                 )
 
-        end
-
-
-        #
-        # convert a json object into parameters for initialize
-        #
-        def self.o_to_params o
-
-            h = super
-            h[:pad_length] = Pcb::Coord.parse o["pad_length"]
-            h[:pad_width]  = Pcb::Coord.parse o["pad_width"]
-            h
         end
 
     end

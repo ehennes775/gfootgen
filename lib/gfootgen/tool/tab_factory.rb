@@ -26,13 +26,13 @@ module Tool
         #
         # the dimension of the tab on the x axis
         #
-        attr_accessor :tab_length
+        attr_serializable :tab_length, Pcb::Coord
 
 
         #
         # the dimension of the pad on the y axis
         #
-        attr_accessor :tab_width
+        attr_serializable :tab_width, Pcb::Coord
 
 
         #
@@ -44,15 +44,6 @@ module Tool
 
             @tab_length = params[:tab_length] || Pcb::Coord::parse("2.5 mm")
             @tab_width = params[:tab_width] || Pcb::Coord.parse("1.7 mm")
-        end
-
-
-        #
-        # create from a json object
-        #
-        def self.create_json o
-
-            new(o_to_params(o))
         end
 
 
@@ -71,17 +62,6 @@ module Tool
                 :number => number
                 )
 
-        end
-
-        #
-        # convert a json object into parameters for initialize
-        #
-        def self.o_to_params o
-
-            h = super
-            h[:tab_length] = Pcb::Coord.parse o["tab_length"]
-            h[:tab_width]  = Pcb::Coord.parse o["tab_width"]
-            h
         end
 
     end

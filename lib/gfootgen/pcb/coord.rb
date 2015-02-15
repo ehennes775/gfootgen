@@ -95,6 +95,15 @@ module Pcb
 
 
         #
+        # parse coordinate from a string inside json
+        #
+        def self.create_json o
+
+            parse o
+        end
+
+
+        #
         # create a new instance
         #
         def initialize value = 0.0, units = UNITS_MM

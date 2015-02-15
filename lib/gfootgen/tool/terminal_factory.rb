@@ -21,18 +21,17 @@ module Tool
     #
     # abstract base class for pad and pin factories
     #
-    class TerminalFactory
+    class TerminalFactory < Serializable
 
         #
         # the clearance, copper-to-copper, for created terminals
         #
-        attr_accessor :clearance
-
+        attr_serializable :clearance, Pcb::Coord
 
         #
         # soldermask relief for created terminals
         #
-        attr_accessor :soldermask_relief
+        attr_serializable :soldermask_relief, Pcb::Coord
 
 
         #
@@ -42,43 +41,6 @@ module Tool
 
             @clearance = params[:clearance] || Pcb::Terminal::DEFAULT_CLEARANCE
             @soldermask_relief = params[:soldermask_relief] || Pcb::Terminal::DEFAULT_SOLDERMASK_RELIEF
-        end
-
-
-        #
-        # convert a json object into parameters for initialize
-        #
-        def self.o_to_params o
-
-            {
-                :clearance         => Pcb::Coord.parse(o["clearance"]),
-                :soldermask_relief => Pcb::Coord.parse(o["soldermask_relief"])
-            }
-        end
-
-
-        #
-        # convert to a hash
-        #
-        def to_h
-
-            instance_variables.reduce({}) do |hash, name|
-
-                getter = name[1..-1].to_sym
-
-                hash[getter] = send getter if respond_to? getter
-
-                hash
-            end
-        end
-
-
-        #
-        # convert to a json object
-        #
-        def to_json *a
-
-            to_h.to_json *a
         end
 
     end

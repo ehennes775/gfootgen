@@ -16,6 +16,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # ++
 
+require_relative 'tool/serializable'
+
 require_relative 'tool/outline'
 require_relative 'tool/chamfer_outline'
 require_relative 'tool/box_outline'

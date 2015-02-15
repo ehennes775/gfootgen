@@ -27,9 +27,9 @@ module Tool
 
         DEFAULT_DRILL_DIAMETER = Pcb::Coord.parse "40 mil"
 
-        attr_accessor :copper_diameter
+        attr_serializable :copper_diameter, Pcb::Coord
 
-        attr_accessor :drill_diameter
+        attr_serializable :drill_diameter, Pcb::Coord
 
         #
         # initialize a new instance
@@ -40,15 +40,6 @@ module Tool
 
             @copper_diameter = params[:copper_diameter] || DEFAULT_COPPER_DIAMETER
             @drill_diameter = params[:drill_diameter] || DEFAULT_DRILL_DIAMETER
-        end
-
-
-        #
-        # create from a json object
-        #
-        def self.create_json o
-
-            new(o_to_params(o))
         end
 
 
