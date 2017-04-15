@@ -16,3 +16,8 @@ The generator currently supports the following footprints:
 |Grid|Grid SMT footprints|
 |Quad|Quad SMT footrpints|
 |SIP|Single-in-line through-hole footprints|
+
+# Links
+
+* [gedasymbols.org](http://www.gedasymbols.org/index.html) Symbols and footprints
+* [EDAkrill](http://repo.hu/projects/edakrill/) Searchable database of symbols and footprints
