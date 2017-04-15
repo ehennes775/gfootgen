@@ -11,7 +11,7 @@ The generator currently supports the following footprints:
 
 |Chip|Generic 2 terminal SMT footprints|
 |DIL|Dual-in-line SMT footprints|
-|DIP|Dial-in-line through-hole footprints|
+|DIP|Dual-in-line through-hole footprints|
 |DPAK|SMT footprints with pads on one side an a large tab on the other|
 |Grid|Grid SMT footprints|
 |Quad|Quad SMT footrpints|
