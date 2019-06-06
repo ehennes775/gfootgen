@@ -23,6 +23,8 @@ module Tool
     #
     class GridSmtFootprintBuilder < SimpleFootprintBuilder
 
+        type_register
+
         #
         # creates pads for the footprint
         #

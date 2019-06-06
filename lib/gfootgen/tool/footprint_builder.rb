@@ -21,7 +21,9 @@ module Tool
     #
     # base class for footprint builders
     #
-    class FootprintBuilder
+    class FootprintBuilder < GLib::Object
+
+        type_register
 
         #
         # builds the element with the general attributes for this footprint
@@ -39,6 +41,8 @@ module Tool
         # initialize a new instance
         #
         def initialize
+
+            super()
 
             @general_builder = GeneralBuilder.new
             @license_builder = LicenseBuilder.new

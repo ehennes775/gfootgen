@@ -23,6 +23,8 @@ module Tool
     #
     class SimpleFootprintBuilder < FootprintBuilder
 
+        type_register
+
         #
         # constructs the silkscreen outline this footprint
         #

@@ -23,6 +23,8 @@ module Tool
     #
     class DilThtFootprintBuilder < SimpleFootprintBuilder
 
+        type_register
+
         #
         # creates pins for the footprint
         #

@@ -25,6 +25,8 @@ module Tool
     #
     class DpakFootprintBuilder < SimpleFootprintBuilder
 
+        type_register
+
         #
         # creates the terminals on the left
         #

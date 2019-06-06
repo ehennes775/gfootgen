@@ -45,7 +45,7 @@ module Gui
 
             super()
 
-            set_column_types String, String, Object
+            set_column_types [String, String, Object]
 
             data.each { |args| add *args } unless data.nil?
         end

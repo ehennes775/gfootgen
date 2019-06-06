@@ -23,6 +23,8 @@ module Tool
     #
     class ChipFootprintBuilder < SimpleFootprintBuilder
 
+        type_register
+
         #
         # creates pads for the footprint
         #

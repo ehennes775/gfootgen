@@ -23,6 +23,8 @@ module Tool
     #
     class SilThtFootprintBuilder < SimpleFootprintBuilder
 
+        type_register
+
         #
         # creates pins for the footprint
         #
