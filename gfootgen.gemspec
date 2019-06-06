@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Footprint Generator for PCB}
   spec.description   = %q{Footprint Generator for PCB}
   spec.homepage      = "http://www.gedasymbols.org/user/edward_hennessy"
-  spec.license       = "GPLv3"
+  spec.license       = "GPL-3.0"
 
   spec.files         = `find . -type f -print`.split("\n")
   spec.executables   = ["gfootgen"]
