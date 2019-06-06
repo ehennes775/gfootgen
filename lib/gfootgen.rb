@@ -26,7 +26,11 @@ require_relative 'gfootgen/tool'
 require_relative 'gfootgen/gui'
 
 if __FILE__ == $0
-    Gtk.init
+
+#    This statement generates an error
+#    Not sure why program works without this statement
+#    Gtk.init
+
         window = Gui::MyWindow.new
     Gtk.main
 end
