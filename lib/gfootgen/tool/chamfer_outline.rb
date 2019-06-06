@@ -21,6 +21,8 @@ module Tool
     # An outline that creates a chamfer at the selected corners
     class ChamferOutline < Outline
 
+	type_register
+
         attr_accessor :lower_size
 
 
@@ -28,6 +30,9 @@ module Tool
 
 
         def initialize params = {}
+
+            super()
+
             @upper_size = params[:upper_size] || 1.0
             @lower_size = params[:lower_size] || 1.0
         end

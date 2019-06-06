@@ -44,7 +44,7 @@ module Gui
 
             super()
 
-            set_column_types String, Object
+            set_column_types [String, Object]
 
             data.each { |args| add *args } unless data.nil?
         end
@@ -56,6 +56,8 @@ module Gui
         def add name, outline
 
             iter = append
+
+	    puts name
 
             set_value iter, COLUMN_NAME, name
             set_value iter, COLUMN_OUTLINE, outline

@@ -20,10 +20,14 @@ module Tool
 
     class BoxOutline < Outline
 
+        type_register
+
         attr_accessor :extend
         attr_accessor :polarity
 
         def initialize params = {}
+
+            super()
 
             @extend = params[:extend] || 0.0
             @polarity = params[:polarity] || false

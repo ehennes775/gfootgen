@@ -21,7 +21,17 @@ module Tool
     #
     # a base class for silkscreen outlines
     #
-    class Outline
+    # Inherits from GLib::Object so it can be placed into a
+    # Gtk::ListStore
+    #
+    class Outline < GLib::Object
+
+        type_register
+
+        def initialize
+            super
+        end
+
     end
 
 end

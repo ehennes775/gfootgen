@@ -23,6 +23,8 @@ module Tool
     #
     class LeftSideCircleOutline < CircleOutline
 
+        type_register
+
         attr_accessor :position
 
         def initialize params = {}

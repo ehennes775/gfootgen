@@ -21,9 +21,12 @@ module Tool
     # base class for outlines that create a circle
     class CircleOutline < Outline
 
+        type_register
+
         BOX_OUTLINE = BoxOutline.new :extend => 0.0, :polarity => false
 
         def initialize params = {}
+            super()
         end
 
         def calculate_center_y element, box, thickness

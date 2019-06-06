@@ -23,6 +23,8 @@ module Tool
     #
     class PinOneCircleOutline < CircleOutline
 
+        type_register
+
         def initialize params = {}
 
             super

@@ -21,6 +21,8 @@ module Tool
     # An outline that creates a semicircle notch at the top
     class NotchOutline < Outline
 
+        type_register
+
         attr_accessor :diameter
 
         def initialize params = {}
