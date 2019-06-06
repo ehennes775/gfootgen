@@ -72,10 +72,16 @@ module Gui
         #
         def create_expander text, widget
 
-            expander = Gtk::Expander.new(
-                "<b>#{text}</b>",
-                 true
-                 )
+            # This seems to have stopped working
+            #
+            #expander = Gtk::Expander.new([
+            #    "<b>#{text}</b>",
+            #     true
+            #    ])
+
+            expander = Gtk::Expander.new
+
+            expander.label = "<b>#{text}</b>";
 
             expander.use_markup = true
             expander.expanded = true
